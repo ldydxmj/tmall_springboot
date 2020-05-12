@@ -1,3 +1,8 @@
+/*
+ * @since: 2020-05-08 17:58:14
+ * @lastTime: 2020-05-12 17:12:39
+ * @message: 
+ */
 
 package com.tmall.pojo;
 
@@ -45,7 +50,6 @@ public class Order {
 	private String statusDesc;
 	
 
-	
 	
 	public void setStatusDesc(String statusDesc) {
 		this.statusDesc = statusDesc;
