@@ -18,8 +18,6 @@ import java.util.Optional;
 @Service
 public class CategoryService {
 
-
-
     @Autowired
     CategoryDAO categoryDAO;
     public List<Category> list() {

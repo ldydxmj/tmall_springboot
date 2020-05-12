@@ -1,6 +1,7 @@
 package com.tmall.controller;
 
 
+import com.tmall.dto.Result;
 import com.tmall.pojo.Category;
 import com.tmall.service.CategoryService;
 import com.tmall.util.ImageUtil;
@@ -64,6 +65,11 @@ public class CategoryController {
     public Category get(@PathVariable("id") int id) throws Exception {
         Category bean=categoryService.get(id);
         return bean;
+    }
+    @GetMapping("/categories/test")
+    public Result test(@RequestParam(value = "id", defaultValue = "5")int id) throws Exception {
+        String message ="测试接口"+id;
+        return Result.fail(message);
     }
 
     public void saveOrUpdateImageFile(Category bean, MultipartFile image, HttpServletRequest request) throws Exception{
