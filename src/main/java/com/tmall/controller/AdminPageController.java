@@ -1,6 +1,6 @@
 package com.tmall.controller;
 
-
+import com.tmall.util.printUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -16,6 +16,9 @@ public class AdminPageController {
     public String listCategory(){
         return "admin/listCategory";
     }
+
+    @GetMapping(value="/admin_role_list")
+    public String adminRoleList(){ return "admin/listCategory"; }
 
     @GetMapping(value="/admin_category_edit")
     public String editCategory(){

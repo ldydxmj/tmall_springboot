@@ -4,7 +4,9 @@ package com.tmall.controller;
 import com.tmall.dto.Result;
 import com.tmall.pojo.Category;
 import com.tmall.service.CategoryService;
+import com.tmall.util.HttpClientTest;
 import com.tmall.util.ImageUtil;
+import com.tmall.util.printUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -69,6 +71,13 @@ public class CategoryController {
     @GetMapping("/categories/test")
     public Result test(@RequestParam(value = "id", defaultValue = "5")int id) throws Exception {
         String message ="测试接口"+id;
+        new Thread().start();
+        printUtil.printString("第一次");
+        HttpClientTest.main("http://www.baidu.com");
+
+        Thread.sleep(5000);
+        printUtil.printString("第二次");
+        HttpClientTest.main("http://www.baidu.com");
         return Result.fail(message);
     }
 
